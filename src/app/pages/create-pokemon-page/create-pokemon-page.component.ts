@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pokemon } from 'src/app/shared/Pokemon-class';
 import { PokedexService } from 'src/app/shared/pokedex.service';
 import { Router } from '@angular/router';
@@ -8,20 +8,13 @@ import { Router } from '@angular/router';
   templateUrl: './create-pokemon-page.component.html',
   styleUrls: ['./create-pokemon-page.component.css'],
 })
-export class CreatePokemonPageComponent implements OnInit {
-  formPokemon: Pokemon = new Pokemon('', '', '');
-  arrayOfPokemon: Pokemon[] = [];
+export class CreatePokemonPageComponent {
+  newPokemon: Pokemon = new Pokemon('', '', '');
 
   constructor(public pokedexService: PokedexService, private router: Router) {}
 
-  ngOnInit() {
-    this.arrayOfPokemon = this.pokedexService.getPokemonList();
-  }
-
   onSubmit(): void {
-    this.arrayOfPokemon.push(this.formPokemon);
+    this.pokedexService.addPokemon(this.newPokemon);
     this.router.navigate(['/']);
   }
-
-  // manque la méthode du service pour pusher dans le tableau, sera fait après...
 }

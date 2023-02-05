@@ -6,11 +6,15 @@ import { POKEMONS } from './pokemons-mock';
   providedIn: 'root',
 })
 export class PokedexService {
-  arrayOfPokemons: Pokemon[] = POKEMONS;
+  arrayOfPokemonsFromService: Pokemon[] = POKEMONS;
 
   constructor() {}
 
   getPokemonList() {
-    return this.arrayOfPokemons;
+    return this.arrayOfPokemonsFromService;
+  }
+
+  addPokemon(newpokemon: Pokemon) {
+    this.arrayOfPokemonsFromService.push(newpokemon);
   }
 }
