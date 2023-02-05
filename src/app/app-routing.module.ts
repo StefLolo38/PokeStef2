@@ -5,11 +5,11 @@ import { PokedexPageComponent } from './pages/pokedex-page/pokedex-page.componen
 
 const routes: Routes = [
   {
-    path: '/',
+    path: '',
     component: PokedexPageComponent,
   },
   {
-    path: '/create',
+    path: 'create',
     component: CreatePokemonPageComponent,
   },
 ];

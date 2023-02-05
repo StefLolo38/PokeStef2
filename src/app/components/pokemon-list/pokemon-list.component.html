@@ -1,1 +1,6 @@
-<p>pokemon-list works!</p>
+<div class="flex-container">
+    <div class="card" *ngFor="let pokemon of arrayOfPokemonForChild">
+        <h3>{{pokemon.pokeName}}</h3>
+        <img (click)="getDescription(pokemon)" [src]="pokemon.urlImg" title="description" alt=" image d'un Pokemon">
+    </div>
+</div>

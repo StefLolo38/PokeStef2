@@ -1,1 +1,28 @@
-<p>create-pokemon-page works!</p>
+<h2>Ajoutez un pockemon:</h2>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <label for="name">Nom du Pokemon: </label>
+        <input type="text" name="name" id="name" [(ngModel)]="formPokemon.pokeName" #name="ngModel" autofocus required>
+    </fieldset>
+    <fieldset>
+        <label for="urlImg">adresse de l'image: </label>
+        <input type="text" name="urlImg" id="urlImg" [(ngModel)]="formPokemon.urlImg" #urlImg="ngModel" required>
+
+    </fieldset>
+    <fieldset>
+        <label for="description">description: </label>
+        <input type="text" name="description" id="description" [(ngModel)]="formPokemon.description">
+    </fieldset>
+    <br>
+    <button type="submit" *ngIf="myForm.valid">Ajouter le pokemon</button>
+
+    <!-- messages d'erreurs -->
+    <div *ngIf="name.errors">
+        <span *ngIf="name.errors['required']">Le nom est manquant</span>
+    </div>
+    <div *ngIf="urlImg.errors">
+        <span *ngIf="urlImg.errors['required']">L'adresse de l'image est manquante</span>
+    </div>
+
+</form>

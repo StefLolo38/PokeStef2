@@ -1,0 +1,9 @@
+.flex-container {
+    display: flex;
+    justify-content: left;
+}
+
+.border {
+    border: 2px black solid;
+    padding: 0 15px;
+}
