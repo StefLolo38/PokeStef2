@@ -22,4 +22,6 @@ export class CreatePokemonPageComponent implements OnInit {
     this.arrayOfPokemon.push(this.formPokemon);
     this.router.navigate(['/']);
   }
+
+  // manque la méthode du service pour pusher dans le tableau, sera fait après...
 }
