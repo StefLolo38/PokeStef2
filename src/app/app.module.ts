@@ -15,7 +15,7 @@ import { CreatePokemonPageComponent } from './pages/create-pokemon-page/create-p
     PokedexPageComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    CreatePokemonPageComponent,
+    CreatePokemonPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
